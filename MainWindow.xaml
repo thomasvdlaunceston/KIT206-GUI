@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="RAP" Height="800" Width="800" Icon="Group-icon.png" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-12.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="436*"/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="421*"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid HorizontalAlignment="Left" Height="248" Margin="13,112,0,0" VerticalAlignment="Top" Width="760" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Family Name" Width="100" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Given Name" Width="100" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Role" Width="100" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Job Title" Width="500" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid HorizontalAlignment="Left" Height="372" Margin="218.5,382,0,0" VerticalAlignment="Top" Width="384" RenderTransformOrigin="-0.215,-0.29" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="2"/>
+        <DataGrid HorizontalAlignment="Left" Height="373" Margin="13,381,0,0" VerticalAlignment="Top" Width="365" RenderTransformOrigin="-0.215,-0.29" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Grid HorizontalAlignment="Left" Height="733" Margin="13,24,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="754" Grid.ColumnSpan="4" Grid.Column="1">
+            <Label Content="Name" HorizontalAlignment="Left" Margin="-4,31,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="45,34,0,0" TextWrapping="Wrap" Text="Enter a name to find" VerticalAlignment="Top" Width="179" AutomationProperties.HelpText="Enter a name to filter the list"/>
+            <Label Content="Employment Level" HorizontalAlignment="Left" Margin="242,31,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="358,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Label Content="Enrollment Status" HorizontalAlignment="Left" Margin="502,31,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="612,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,71,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,341,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+            <TextBlock HorizontalAlignment="Left" Margin="375,341,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+        </Grid>
+        <Menu x:Name="MainMenu" HorizontalAlignment="Left" Height="26" Margin="14,6,0,0" VerticalAlignment="Top" Width="759" Grid.ColumnSpan="4" Grid.Column="1">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Close" IsCheckable="true" />
+
+
+            </MenuItem>
+            <MenuItem Header="_Report">
+                <MenuItem Header="_Generate Report" IsCheckable="true" />
+
+
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
