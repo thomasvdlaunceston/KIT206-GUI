@@ -6,65 +6,65 @@
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
         Title="RAP" Height="800" Width="800" Icon="Group-icon.png" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,-12.5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="436*"/>
-            <RowDefinition Height="349*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="171*"/>
-            <ColumnDefinition Width="421*"/>
-            <ColumnDefinition Width="157*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid Name="ResearcherList" HorizontalAlignment="Left" Height="248" Margin="13,112,0,0" VerticalAlignment="Top" Width="760" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged">
+	<Grid Margin="0,0,0,-12.5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="436*"/>
+			<RowDefinition Height="349*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="7*"/>
+			<ColumnDefinition Width="171*"/>
+			<ColumnDefinition Width="421*"/>
+			<ColumnDefinition Width="157*"/>
+			<ColumnDefinition Width="40*"/>
+		</Grid.ColumnDefinitions>
+		<DataGrid Name="ResearcherList" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="13,112,0,0" VerticalAlignment="Top" Width="760" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" Background="{x:Null}">
 			<DataGrid.Columns >
 				<DataGridTextColumn Header="Researchers" Width="100" ></DataGridTextColumn>
 
 
 			</DataGrid.Columns>
-			
-        </DataGrid>
-        <DataGrid HorizontalAlignment="Left" Height="364" Margin="218.5,390,0,0" VerticalAlignment="Top" Width="384" RenderTransformOrigin="-0.215,-0.29" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="2"/>
-        <Grid HorizontalAlignment="Left" Height="733" Margin="13,24,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="754" Grid.ColumnSpan="4" Grid.Column="1">
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="363" Margin="0,366,0,0" VerticalAlignment="Top" Width="373"/>
-            <Label Content="Filter by name:" HorizontalAlignment="Left" Margin="-6,31,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="88,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" AutomationProperties.HelpText="Enter a name to filter the list"/>
-            <Label Content="Show:" HorizontalAlignment="Left" Margin="296,31,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="346,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,71,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,341,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
-            <TextBlock HorizontalAlignment="Left" Margin="375,341,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
-            <Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>
-            <Label Content="Title" HorizontalAlignment="Left" Margin="1,397,0,0" VerticalAlignment="Top"/>
-            <Label Content="Email:" HorizontalAlignment="Left" Margin="1,458,0,0" VerticalAlignment="Top"/>
-            <Label Content="Unit:" HorizontalAlignment="Left" Margin="1,418,0,0" VerticalAlignment="Top"/>
-            <Label Content="Campus:" HorizontalAlignment="Left" Margin="1,438,0,0" VerticalAlignment="Top"/>
-            <Label Content="Current Job:" HorizontalAlignment="Left" Margin="0,478,0,0" VerticalAlignment="Top"/>
-            <Label Content="Commenced with institution:" HorizontalAlignment="Left" Margin="0,498,0,0" VerticalAlignment="Top"/>
-            <Label Content="Commenced current position:" HorizontalAlignment="Left" Margin="0,518,0,0" VerticalAlignment="Top"/>
-            <Label Content="Previous positions:" HorizontalAlignment="Left" Margin="0,538,0,0" VerticalAlignment="Top"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="200,376,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label Content="Tenure:" HorizontalAlignment="Left" Margin="0,558,0,0" VerticalAlignment="Top"/>
-            <Label Content="Publications:" HorizontalAlignment="Left" Margin="0,578,0,0" VerticalAlignment="Top"/>
-            <Label Content="3Y average:" HorizontalAlignment="Left" Margin="0,598,0,0" VerticalAlignment="Top"/>
-            <Label Content="Supervisions:" HorizontalAlignment="Left" Margin="0,618,0,0" VerticalAlignment="Top"/>
-            <Label Content="Degree:" HorizontalAlignment="Left" Margin="0,638,0,0" VerticalAlignment="Top"/>
-            <Label Content="Supervisor:" HorizontalAlignment="Left" Margin="0,658,0,0" VerticalAlignment="Top"/>
 
-        </Grid>
-        <Menu x:Name="MainMenu" HorizontalAlignment="Left" Height="26" Margin="14,6,0,0" VerticalAlignment="Top" Width="759" Grid.ColumnSpan="4" Grid.Column="1">
-            <MenuItem Header="_File">
-                <MenuItem Header="_Close" IsCheckable="true" />
+		</DataGrid>
+		<DataGrid HorizontalAlignment="Left" Height="364" Margin="218.5,390,0,0" VerticalAlignment="Top" Width="384" RenderTransformOrigin="-0.215,-0.29" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="2"/>
+		<Grid HorizontalAlignment="Left" Height="733" Margin="13,24,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="754" Grid.ColumnSpan="4" Grid.Column="1">
+			<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="363" Margin="0,366,0,0" VerticalAlignment="Top" Width="373"/>
+			<Label Content="Filter by name:" HorizontalAlignment="Left" Margin="-6,31,0,0" VerticalAlignment="Top"/>
+			<TextBox HorizontalAlignment="Left" Height="23" Margin="88,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" AutomationProperties.HelpText="Enter a name to filter the list"/>
+			<Label Content="Show:" HorizontalAlignment="Left" Margin="296,31,0,0" VerticalAlignment="Top"/>
+			<ComboBox HorizontalAlignment="Left" Margin="346,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,71,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+			<TextBlock HorizontalAlignment="Left" Margin="0,341,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+			<TextBlock HorizontalAlignment="Left" Margin="375,341,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
+			<Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>
+			<Label Content="Title" HorizontalAlignment="Left" Margin="1,397,0,0" VerticalAlignment="Top"/>
+			<Label Content="Email:" HorizontalAlignment="Left" Margin="1,458,0,0" VerticalAlignment="Top"/>
+			<Label Content="Unit:" HorizontalAlignment="Left" Margin="1,418,0,0" VerticalAlignment="Top"/>
+			<Label Content="Campus:" HorizontalAlignment="Left" Margin="1,438,0,0" VerticalAlignment="Top"/>
+			<Label Content="Current Job:" HorizontalAlignment="Left" Margin="0,478,0,0" VerticalAlignment="Top"/>
+			<Label Content="Commenced with institution:" HorizontalAlignment="Left" Margin="0,498,0,0" VerticalAlignment="Top"/>
+			<Label Content="Commenced current position:" HorizontalAlignment="Left" Margin="0,518,0,0" VerticalAlignment="Top"/>
+			<Label Content="Previous positions:" HorizontalAlignment="Left" Margin="0,538,0,0" VerticalAlignment="Top"/>
+			<Image HorizontalAlignment="Left" Height="100" Margin="200,376,0,0" VerticalAlignment="Top" Width="100"/>
+			<Label Content="Tenure:" HorizontalAlignment="Left" Margin="0,558,0,0" VerticalAlignment="Top"/>
+			<Label Content="Publications:" HorizontalAlignment="Left" Margin="0,578,0,0" VerticalAlignment="Top"/>
+			<Label Content="3Y average:" HorizontalAlignment="Left" Margin="0,598,0,0" VerticalAlignment="Top"/>
+			<Label Content="Supervisions:" HorizontalAlignment="Left" Margin="0,618,0,0" VerticalAlignment="Top"/>
+			<Label Content="Degree:" HorizontalAlignment="Left" Margin="0,638,0,0" VerticalAlignment="Top"/>
+			<Label Content="Supervisor:" HorizontalAlignment="Left" Margin="0,658,0,0" VerticalAlignment="Top"/>
 
-
-            </MenuItem>
-            <MenuItem Header="_Report">
-                <MenuItem Header="_Generate Report" IsCheckable="true" />
+		</Grid>
+		<Menu x:Name="MainMenu" HorizontalAlignment="Left" Height="26" Margin="14,6,0,0" VerticalAlignment="Top" Width="759" Grid.ColumnSpan="4" Grid.Column="1">
+			<MenuItem Header="_File">
+				<MenuItem Header="_Close" IsCheckable="true" />
 
 
-            </MenuItem>
-        </Menu>
-    </Grid>
+			</MenuItem>
+			<MenuItem Header="_Report">
+				<MenuItem Header="_Generate Report" IsCheckable="true" />
+
+
+			</MenuItem>
+		</Menu>
+	</Grid>
 </Window>

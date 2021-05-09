@@ -33,6 +33,10 @@ namespace KIT206_GUI
         {
 
         }
-        
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
