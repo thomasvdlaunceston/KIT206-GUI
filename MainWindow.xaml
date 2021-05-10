@@ -18,9 +18,14 @@
 			<ColumnDefinition Width="157*"/>
 			<ColumnDefinition Width="40*"/>
 		</Grid.ColumnDefinitions>
-		<DataGrid Name="ResearcherList" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="13,112,0,0" VerticalAlignment="Top" Width="760" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" Background="{x:Null}">
+		<DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="248" Margin="0,112,14.57,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" HorizontalAlignment="Right" Width="760">
 			<DataGrid.Columns >
-				<DataGridTextColumn Header="Researchers" Width="100" ></DataGridTextColumn>
+				<DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
+				<DataGridTextColumn Header="GivenName" Binding="{Binding Path=GivenName}"/>
+				<DataGridTextColumn Header="FamilyName" Binding="{Binding Path=FamilyName}"/>
+				<DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" />
+				<DataGridTextColumn Header="Position" Binding="{Binding Path=CurrentJobTitle}" />
+
 
 
 			</DataGrid.Columns>
