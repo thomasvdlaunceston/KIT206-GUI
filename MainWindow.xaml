@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="RAP" Height="800" Width="800" Icon="Group-icon.png" ResizeMode="NoResize">
+        Title="RAP" Height="800" Width="800" Icon="Group-icon.png">
 	<Grid Margin="0,0,0,-12.5">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="436*"/>
@@ -19,18 +19,14 @@
 			<ColumnDefinition Width="40*"/>
 		</Grid.ColumnDefinitions>
 		<DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="248" Margin="0,112,14.57,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" HorizontalAlignment="Right" Width="760">
-			<DataGrid.Columns >
-				<DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
-				<DataGridTextColumn Header="GivenName" Binding="{Binding Path=GivenName}"/>
-				<DataGridTextColumn Header="FamilyName" Binding="{Binding Path=FamilyName}"/>
-				<DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" />
-				<DataGridTextColumn Header="Position" Binding="{Binding Path=CurrentJobTitle}" />
-
-
-
-			</DataGrid.Columns>
-
-		</DataGrid>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
+                <DataGridTextColumn Header="GivenName" Binding="{Binding Path=GivenName}"/>
+                <DataGridTextColumn Header="FamilyName" Binding="{Binding Path=FamilyName}"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" />
+                <DataGridTextColumn Header="Position" Binding="{Binding Path=level}" />
+            </DataGrid.Columns>
+        </DataGrid>
 		<DataGrid HorizontalAlignment="Left" Height="364" Margin="218.5,390,0,0" VerticalAlignment="Top" Width="384" RenderTransformOrigin="-0.215,-0.29" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="2"/>
 		<Grid HorizontalAlignment="Left" Height="733" Margin="13,24,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="754" Grid.ColumnSpan="4" Grid.Column="1">
 			<Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="363" Margin="0,366,0,0" VerticalAlignment="Top" Width="373"/>
@@ -42,6 +38,7 @@
 			<TextBlock HorizontalAlignment="Left" Margin="0,341,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
 			<TextBlock HorizontalAlignment="Left" Margin="375,341,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
 			<Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>
+            
 			<Label Content="Title" HorizontalAlignment="Left" Margin="1,397,0,0" VerticalAlignment="Top"/>
 			<Label Content="Email:" HorizontalAlignment="Left" Margin="1,458,0,0" VerticalAlignment="Top"/>
 			<Label Content="Unit:" HorizontalAlignment="Left" Margin="1,418,0,0" VerticalAlignment="Top"/>

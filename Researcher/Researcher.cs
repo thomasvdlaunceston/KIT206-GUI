@@ -17,6 +17,7 @@ namespace KIT206_GroupWork.Researcher
         public string Campus { get; set; }
         public string Email { get; set; }
         public string Photo { get; set; }
+        public EmploymentLevel level { get; set; }
 
 
         public List<Position> positions { get; set; }

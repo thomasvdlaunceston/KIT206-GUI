@@ -22,15 +22,13 @@ namespace KIT206_GroupWork.Control
 
         public ResearcherController()
         {
-
-
-
         }
 
         public void LoadReseachers()
         {
             mainList = new List<Researcher.Researcher>(Adapters.ERDAdapter.fetchBasicResearcherDetails());
             displayList = new ObservableCollection<Researcher.Researcher>(mainList);
+
             /*string text = ("test");
             Console.WriteLine(text);*/
         }

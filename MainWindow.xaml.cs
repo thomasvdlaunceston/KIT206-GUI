@@ -23,6 +23,7 @@ namespace KIT206_GUI
         public MainWindow()
         {
             InitializeComponent();
+
             KIT206_GroupWork.Control.ResearcherController R_Controller = new KIT206_GroupWork.Control.ResearcherController();
             R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();

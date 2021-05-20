@@ -53,10 +53,10 @@ namespace KIT206_GroupWork.Adapters
                 {
                     //This illustrates how the raw data can be obtained using an indexer [] or a particular data type can be obtained using a GetTYPENAME() method.
                     //Console.WriteLine("{0} {1}", rdr[0], rdr.GetString(1));
-                    Researcher.Researcher res = new Researcher.Researcher { GivenName = rdr.GetString(1), FamilyName = rdr.GetString(2), ID = rdr.GetInt32(0), Title = rdr.GetString(4) };
+                    var enumerated = rdr[3] != DBNull.Value ? rdr.GetString(3) : "Student";
+                    Researcher.Researcher res = new Researcher.Researcher { GivenName = rdr.GetString(1), FamilyName = rdr.GetString(2), ID = rdr.GetInt32(0), Title = rdr.GetString(4), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated )};
                     res.positions = new List<Researcher.Position>();
                     //https://stackoverflow.com/questions/20547261/database-field-enum-to-c-sharp-list
-                    var enumerated = rdr[3] != DBNull.Value ? rdr.GetString(3) : "Student";
                     Researcher.Position pos = new Researcher.Position { level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated) };
                     res.positions.Add(pos);
                     //Employee e = new Employee { Name = combined, ID = rdr.GetInt32(2) };
@@ -207,10 +207,13 @@ namespace KIT206_GroupWork.Adapters
                 {
                     //This illustrates how the raw data can be obtained using an indexer [] or a particular data type can be obtained using a GetTYPENAME() method.
                     //Console.WriteLine("{0} {1}", rdr[0], rdr.GetString(1));
+                    /*var enumerated = rdr[3] != DBNull.Value ? rdr.GetString(3) : "Student";
+                    Researcher.Researcher res = new Researcher.Researcher { GivenName = rdr.GetString(1), FamilyName = rdr.GetString(2), ID = rdr.GetInt32(0), Title = rdr.GetString(4), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated )};*/
 
                     if (rdr.GetString(1) == "Student")
                     {
-                        student = new Researcher.Student { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), Degree = rdr.GetString(9) };
+                        var enumerated = rdr[11] != DBNull.Value ? rdr.GetString(3) : "Student";
+                        student = new Researcher.Student { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), Degree = rdr.GetString(9), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated) };
                         Researcher.Position studentPos = new Researcher.Position { start = rdr.GetDateTime(12), level = Researcher.EmploymentLevel.Student };
                         student.positions = new List<Researcher.Position>();
                         student.positions.Add(studentPos);
@@ -218,7 +221,8 @@ namespace KIT206_GroupWork.Adapters
                     }
                     else
                     {
-                        staff = new Researcher.Staff { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8) };
+                        var enumerated = rdr[11] != DBNull.Value ? rdr.GetString(3) : "Student";
+                        staff = new Researcher.Staff { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated) };
                         conn.Close();
                         positions = fetchPositions(id);
                         staff.positions = new List<Researcher.Position>(positions);
@@ -411,7 +415,7 @@ namespace KIT206_GroupWork.Adapters
     {
 
     }*/
-}
+                }
 /*public static Researcher.Researcher completeResearcherDetails(Researcher.Researcher r) { }*/
 
 

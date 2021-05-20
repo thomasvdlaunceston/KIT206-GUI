@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:KIT206_GUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
          
     </Application.Resources>
 </Application>
