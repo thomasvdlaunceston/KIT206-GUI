@@ -15,7 +15,7 @@ namespace KIT206_GroupWork.Researcher
 		private Dictionary<EmploymentLevel, string> convertTitle = new Dictionary<EmploymentLevel, string>();
 
 		public Position()
-        {
+		{
 			convertTitle[EmploymentLevel.Student] = "Student";
 			convertTitle[EmploymentLevel.A] = "Postdoc";
 			convertTitle[EmploymentLevel.B] = "Lecturer";
@@ -41,9 +41,9 @@ namespace KIT206_GroupWork.Researcher
 		}
 
 		public string ToTitle(EmploymentLevel I)
-        {
+		{
 			return convertTitle[I];
-        }
+		}
 
 	}
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KIT206_GroupWork.Researcher
 {
-	class Staff: Researcher
+	class Staff : Researcher
 	{
 		private Dictionary<EmploymentLevel, double> expectedPub = new Dictionary<EmploymentLevel, double>();
 		public List<Student> student;
@@ -29,21 +29,21 @@ namespace KIT206_GroupWork.Researcher
 			int CurrentYear = DateTime.Now.Year;
 			int totalPublications = publications.Count;
 
-			while ((CurrentYear - publications[totalPublications].Year.Year)<=3)
-            {
+			while ((CurrentYear - publications[totalPublications].Year) <= 3)
+			{
 				numberOfPublications++;
 				totalPublications--;
-            }
+			}
 
 			return numberOfPublications / 3;
-			
+
 		}
 
 		public float Performance()
-        {
+		{
 			double CurrentExpectedNumber = expectedPub[GetCurrentJob().level];
 			return (float)(ThreeYearAverage() / CurrentExpectedNumber);
-        }
+		}
 
 
 

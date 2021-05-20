@@ -17,7 +17,7 @@ namespace KIT206_GroupWork.Researcher
         public string Campus { get; set; }
         public string Email { get; set; }
         public string Photo { get; set; }
-        
+
 
         public List<Position> positions { get; set; }
         public List<Publication> publications { get; set; }
@@ -28,15 +28,15 @@ namespace KIT206_GroupWork.Researcher
             //positions = new List<Position>();
         }
 
-        public Position GetCurrentJob() 
+        public Position GetCurrentJob()
         {
             return positions.LastOrDefault();
         }
-        public string CurrentJobTitle() 
+        public string CurrentJobTitle()
         {
             return positions.LastOrDefault().title();
         }
-        public DateTime CurrentJobStart() 
+        public DateTime CurrentJobStart()
         {
             return positions.LastOrDefault().start;
         }
@@ -44,10 +44,11 @@ namespace KIT206_GroupWork.Researcher
         {
             return positions.FirstOrDefault();
         }
-        public float Tenure() {
+        public float Tenure()
+        {
 
-            return (float)((DateTime.Now - EarliestJob().start).Days/365.25);
-        
+            return (float)((DateTime.Now - EarliestJob().start).Days / 365.25);
+
         }
         public int PublicationsCount()
         {
