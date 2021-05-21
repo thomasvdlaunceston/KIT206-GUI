@@ -45,9 +45,18 @@ namespace KIT206_GUI
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            if (SearchBox.Text!= ("")) {
             R_Controller.FilterByName(SearchBox.Text);
-            ResearcherList.ItemsSource = R_Controller.GetViewableList();
+                return;
+            }
+            else {
+                R_Controller.reset();
+            }
+
+
+           
+            
+          
 
             
             
