@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="RAP" Height="800" Width="800" Icon="Group-icon.png">
+        Title="RAP" Height="800" Width="800" Icon="Group-icon.png" ResizeMode="NoResize">
 	<Grid Margin="0,0,0,-12.5">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="436*"/>
