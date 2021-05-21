@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KIT206_GroupWork.Researcher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,13 @@ namespace KIT206_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        KIT206_GroupWork.Control.ResearcherController R_Controller = new KIT206_GroupWork.Control.ResearcherController();
         public MainWindow()
         {
             InitializeComponent();
 
-            KIT206_GroupWork.Control.ResearcherController R_Controller = new KIT206_GroupWork.Control.ResearcherController();
-            R_Controller.LoadReseachers();
+            
+           R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();
 
             
@@ -39,6 +41,16 @@ namespace KIT206_GUI
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+            R_Controller.FilterByName(SearchBox.Text);
+            ResearcherList.ItemsSource = R_Controller.GetViewableList();
+
+            
+            
         }
     }
 }
