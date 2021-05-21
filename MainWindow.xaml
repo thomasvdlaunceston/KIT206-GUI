@@ -6,19 +6,19 @@
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
         Title="RAP" Height="800" Width="800" Icon="Group-icon.png">
-    <Grid Margin="0,0,0,-12.5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="436*"/>
-            <RowDefinition Height="349*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="171*"/>
-            <ColumnDefinition Width="421*"/>
-            <ColumnDefinition Width="157*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
-        <DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="248" Margin="0,112,14.57,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" HorizontalAlignment="Right" Width="760">
+	<Grid Margin="0,0,0,-12.5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="436*"/>
+			<RowDefinition Height="349*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="7*"/>
+			<ColumnDefinition Width="171*"/>
+			<ColumnDefinition Width="421*"/>
+			<ColumnDefinition Width="157*"/>
+			<ColumnDefinition Width="40*"/>
+		</Grid.ColumnDefinitions>
+		<DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="248" Margin="0,112,14.57,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Grid.Column="1" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" HorizontalAlignment="Right" Width="760">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
                 <DataGridTextColumn Header="GivenName" Binding="{Binding Path=GivenName}"/>
