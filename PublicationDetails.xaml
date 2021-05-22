@@ -12,51 +12,50 @@
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="PublicationDetailsPane" HorizontalAlignment="Left" Height="410" Margin="6,8,0,0" VerticalAlignment="Top" Width="431">
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="DOI:"></Label>
                 <Label Content="{Binding Path=DOI}"></Label>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Title:"></Label>
                 <!--<Label Content="{Binding Path=Title}"></Label>-->
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Title}" Width="381"></TextBlock>
+        <TextBlock TextWrapping="Wrap" Text="{Binding Path=Title}"></TextBlock>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Author:"></Label>
                 <Label Content="{Binding Path=Authors}"></Label>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Publication Year:"></Label>
                 <Label Content="{Binding Path=Year}"></Label>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Type:"></Label>
                 <Label Content="{Binding Path=Type}"></Label>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Cite as:"></Label>
                 <!--<Label Content="{Binding Path=CiteAs}"></Label>-->
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=CiteAs}" Width="381"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Path=CiteAs}"></TextBlock>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Availbility Date:"></Label>
                 <Label Content="{Binding Path=Available}"></Label>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <Label Content="Age:"></Label>
                 <Label Content="{Binding Path=currentAge}"></Label>
             </StackPanel>
 
 
         </StackPanel>
-
 
     </Grid>
 </Window>
