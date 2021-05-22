@@ -15,6 +15,7 @@ namespace KIT206_GroupWork.Researcher
 		public OutputType Type { get; set; }
 		public string CiteAs { get; set; }
 		public DateTime Available { get; set; }
+		public int currentAge { get { return Age(); } }
 
 		public Publication()
 		{

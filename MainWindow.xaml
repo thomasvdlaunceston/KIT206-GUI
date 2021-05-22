@@ -120,8 +120,12 @@
 
             </MenuItem>
         </Menu>
-        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,30,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ListOfPublications_MouseDoubleClick">
-            
+        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,30,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
             <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
             <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>

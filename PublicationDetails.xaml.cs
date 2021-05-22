@@ -25,17 +25,18 @@ namespace KIT206_GUI
 
         KIT206_GroupWork.Control.PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
 
-        public PublicationDetails()
+        public PublicationDetails(KIT206_GroupWork.Researcher.Publication pub)
         {
             InitializeComponent();
 
-            P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+            //P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+            PublicationDetailsPane.DataContext = pub;
 
             // Pass parameter to loadPublicationDetails();
 
-           // P_Controller.loadPublicationDetails();
+            // P_Controller.loadPublicationDetails();
 
-            
+
 
         }
     }

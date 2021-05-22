@@ -117,16 +117,33 @@ namespace KIT206_GUI
 
             }
 
-        private void ListOfPublications_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        /*private void ListOfPublications_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var currentRowIndex = ListOfPublications.Items.IndexOf(ListOfPublications.SelectedItem);
+
+           
 
             PublicationDetails pdetails = new PublicationDetails();
 
             pdetails.ShowDialog();
 
 
+        }*/
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //https://stackoverflow.com/questions/22790181/wpf-datagrid-row-double-click-event-programmatically
+            DataGridRow row = sender as DataGridRow;
+            //MessageBox.Show("" + row.DataContext.GetType());
+
+            PublicationDetails pdetails = new PublicationDetails(KIT206_GroupWork.Adapters.ERDAdapter.completePublicationDetails((Publication) row.DataContext));
+
+            pdetails.ShowDialog();
+
+            // Some operations with this row
         }
+
+
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (SearchBox.Text!= ("")) {
@@ -137,14 +154,14 @@ namespace KIT206_GUI
                 R_Controller.reset();
             }
 
-            }
+        }
 
-            private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-            {
+        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
 
 
 
-            }
+        }
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
