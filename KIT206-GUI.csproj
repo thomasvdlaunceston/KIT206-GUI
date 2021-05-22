@@ -60,6 +60,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Program.cs" />
+    <Compile Include="PublicationDetails.xaml.cs">
+      <DependentUpon>PublicationDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Researcher\EmploymentLevel.cs" />
     <Compile Include="Researcher\OutputType.cs" />
     <Compile Include="Researcher\Position.cs" />
@@ -82,6 +85,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PublicationDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

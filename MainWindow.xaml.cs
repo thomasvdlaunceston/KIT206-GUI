@@ -29,6 +29,7 @@ namespace KIT206_GUI
 
             R_Controller = new KIT206_GroupWork.Control.ResearcherController();
             P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+
             R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();
         }
@@ -72,11 +73,18 @@ namespace KIT206_GUI
 
         }
 
-
-        private void List_of_Publications_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListOfPublications_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            var currentRowIndex = ListOfPublications.Items.IndexOf(ListOfPublications.SelectedItem);
 
+            PublicationDetails pdetails = new PublicationDetails();
+
+            pdetails.ShowDialog();
+               
         }
+
+
+
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -96,5 +104,7 @@ namespace KIT206_GUI
             
             
         }
+
+       
     }
 }
