@@ -45,6 +45,11 @@ namespace KIT206_GroupWork.Researcher
 			return convertTitle[I];
 		}
 
-	}
+        public override string ToString()
+        {
+			return String.Format("Position: {0}  {1}-{2}", title(), start.ToShortDateString(), end.ToShortDateString());
+        }
+
+    }
 
 }
