@@ -37,7 +37,8 @@ namespace KIT206_GUI
             private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
 
-
+            if (e.AddedItems.Count != 0)
+            {
                 R_Controller.LoadResearcherDetails(((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]).ID);
                 P_Controller.loadPublications((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]);
                 if (R_Controller.isStaff)
@@ -58,15 +59,21 @@ namespace KIT206_GUI
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
                 }
                 PublicationCount.DataContext = P_Controller;
+            }
+            else
+            {
+                DetailsPanel.DataContext = null;
+                ListOfPublications.ItemsSource = null;
+                PublicationCount.DataContext = null;
+            }
 
 
-                //MessageBox.Show("" + e.AddedItems[0]);
             }
         
 
             private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
-
+                
                 if (filterComboBox.SelectedItem.Equals(EmploymentLevel.A))
                 {
                     R_Controller.FilterBy(EmploymentLevel.A);
@@ -138,6 +145,11 @@ namespace KIT206_GUI
 
 
             }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            R_Controller.reset();
         }
+    }
     } 
 
