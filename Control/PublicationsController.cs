@@ -68,5 +68,20 @@ namespace KIT206_GroupWork.Control
         {
             return Adapters.ERDAdapter.completePublicationDetails(p);
         }
+
+        public void filterByYear(int startYear, int endYear)
+        {
+            var filtered = from Researcher.Publication pub in mainList
+                           where pub.Year >= startYear && pub.Year <= endYear
+                           select pub;
+            displayList.Clear();
+            filtered.ToList().ForEach(displayList.Add);
+        }
+
+        public void reset()
+        {
+            displayList.Clear();
+            mainList.ForEach(displayList.Add);
+        }
     }
 }
