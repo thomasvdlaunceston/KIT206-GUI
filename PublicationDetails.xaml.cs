@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KIT206_GroupWork.Researcher;
+
+
 
 namespace KIT206_GUI
 {
@@ -19,11 +22,20 @@ namespace KIT206_GUI
     /// </summary>
     public partial class PublicationDetails : Window
     {
+
+        KIT206_GroupWork.Control.PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+
         public PublicationDetails()
         {
             InitializeComponent();
 
+            P_Controller = new KIT206_GroupWork.Control.PublicationsController();
 
+            // Pass parameter to loadPublicationDetails();
+
+           // P_Controller.loadPublicationDetails();
+
+            
 
         }
     }
