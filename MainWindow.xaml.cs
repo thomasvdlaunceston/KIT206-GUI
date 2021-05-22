@@ -117,25 +117,25 @@ namespace KIT206_GUI
 
             }
 
+        private void ListOfPublications_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var currentRowIndex = ListOfPublications.Items.IndexOf(ListOfPublications.SelectedItem);
 
-            private void List_of_Publications_SelectionChanged(object sender, SelectionChangedEventArgs e)
-            {
+            PublicationDetails pdetails = new PublicationDetails();
 
-                
+            pdetails.ShowDialog();
 
 
+        }
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchBox.Text!= ("")) {
+            R_Controller.FilterByName(SearchBox.Text);
+                return;
             }
-
-
-            private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
-            {
-                if (SearchBox.Text != ("")) {
-                    R_Controller.FilterByName(SearchBox.Text);
-                    return;
-                }
-                else {
-                    R_Controller.reset();
-                }
+            else {
+                R_Controller.reset();
+            }
 
             }
 

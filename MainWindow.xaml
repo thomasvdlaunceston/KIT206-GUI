@@ -108,37 +108,6 @@
 
 
 
-        <!--<Label Content="Title" HorizontalAlignment="Left" Margin="1,397,0,0" VerticalAlignment="Top"/>
-            <Label Content="Email:" HorizontalAlignment="Left" Margin="1,458,0,0" VerticalAlignment="Top"/>
-            <Label Content="Unit:" HorizontalAlignment="Left" Margin="1,418,0,0" VerticalAlignment="Top"/>
-            <Label Content="Campus:" HorizontalAlignment="Left" Margin="1,438,0,0" VerticalAlignment="Top"/>
-            <Label Content="Current Job:" HorizontalAlignment="Left" Margin="0,478,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Commenced with institution:" HorizontalAlignment="Left" Margin="0,498,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-            <Label Content="Commenced current position:" HorizontalAlignment="Left" Margin="0,518,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-            <Label Content="Previous positions:" HorizontalAlignment="Left" Margin="0,538,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="196,377,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2"/>
-            <Label Content="Tenure:" HorizontalAlignment="Left" Margin="0,558,0,0" VerticalAlignment="Top"/>
-            <Label Content="Publications:" HorizontalAlignment="Left" Margin="0,578,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="3Y average:" HorizontalAlignment="Left" Margin="0,598,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Supervisions:" HorizontalAlignment="Left" Margin="0,618,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Degree:" HorizontalAlignment="Left" Margin="0,638,0,0" VerticalAlignment="Top"/>
-            <Label Content="Supervisor:" HorizontalAlignment="Left" Margin="0,658,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label x:Name="R_Name" Content="{Binding Path=Title}" HorizontalAlignment="Left" Margin="54,375,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="53,419,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.474,0.462" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="54,439,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.474,0.462" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="55,458,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="3,478,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="65,498,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="64,518,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="12,539,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="47,559,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,659,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.231" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,638,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.231" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,618,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.447,1.231" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <Label Content="Image" HorizontalAlignment="Left" Margin="222,479,0,0" VerticalAlignment="Top" Grid.Column="2"/>-->
-
-
-
         <Menu x:Name="MainMenu"  Height="26" Margin="0,0,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
             <MenuItem Header="_File">
                 <MenuItem Header="_Close" IsCheckable="true" />
@@ -151,10 +120,11 @@
 
             </MenuItem>
         </Menu>
-        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,40,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1" SelectionChanged="ListOfPublications_SelectionChanged">
+        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,30,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1" MouseDoubleClick="ListOfPublications_MouseDoubleClick">
+            
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
-                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
+            <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
+            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
             </DataGrid.Columns>
         </DataGrid>
         <!--<Label Content="Label" HorizontalAlignment="Left" Margin="66,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="7,1.105" Grid.Column="1" Grid.RowSpan="2"/>-->
