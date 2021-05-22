@@ -15,7 +15,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="250" Margin="0,90,-0.4,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2">
+        <DataGrid Name="ResearcherList" AutoGenerateColumns="False" IsReadOnly="True" Height="218" Margin="0,90,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
                 <DataGridTextColumn Header="GivenName" Binding="{Binding Path=GivenName}"/>
@@ -34,16 +34,12 @@
             <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="23" Margin="24,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" AutomationProperties.HelpText="Enter a name to filter the list" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="SearchBox_TextChanged"/>
             <Label Content="Show:" HorizontalAlignment="Left" Margin="196,31,0,0" VerticalAlignment="Top" Grid.Column="2"/>
             <ComboBox x:Name="filterComboBox" HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2" IsEditable="True" Text="Please Select">
-          
+
             </ComboBox>
-			<TextBlock HorizontalAlignment="Left" Margin="0,71,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
-            <TextBlock HorizontalAlignment="Left" Margin="0,346,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
-            <TextBlock HorizontalAlignment="Left" Margin="338,344,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Column="2"/>
-            <Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2"/>
+
 
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="13,69,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Column="1" Grid.Row="1"/>
 
@@ -61,8 +57,8 @@
                 <Label Content="{Binding Path=Title}"></Label>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Unit:"></Label>
-                <Label Content="{Binding Path=School}"></Label>
+                <Label Content="{Binding School}"/>
+                <Label Content="Unit:" Width="37"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Campus:"></Label>
@@ -156,10 +152,10 @@
             </MenuItem>
         </Menu>
         <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,30,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1" SelectionChanged="ListOfPublications_SelectionChanged">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
-            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
-        </DataGrid.Columns>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
+                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
+            </DataGrid.Columns>
         </DataGrid>
         <!--<Label Content="Label" HorizontalAlignment="Left" Margin="66,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="7,1.105" Grid.Column="1" Grid.RowSpan="2"/>-->
     </Grid>
