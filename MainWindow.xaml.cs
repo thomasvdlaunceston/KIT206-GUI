@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KIT206_GroupWork.Researcher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,6 +76,25 @@ namespace KIT206_GUI
         private void List_of_Publications_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchBox.Text!= ("")) {
+            R_Controller.FilterByName(SearchBox.Text);
+                return;
+            }
+            else {
+                R_Controller.reset();
+            }
+
+
+           
+            
+          
+
+            
+            
         }
     }
 }
