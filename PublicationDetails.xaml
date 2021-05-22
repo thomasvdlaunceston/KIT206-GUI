@@ -5,17 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="PublicationDetails" Height="450" Width="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="PublicationDetails" Height="450" Width="450" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="540"/>
- 
-            
-        </Grid.ColumnDefinitions>
-        <StackPanel x:Name="PulicationDetailsView" HorizontalAlignment="Left" Height="440" Margin="5,5,5,5" VerticalAlignment="Top" Width="540">
-            <StackPanel Height="100"/>
-        </StackPanel>
-
+        <DataGrid HorizontalAlignment="Left" Height="420" Margin="0,0,0,0" VerticalAlignment="Top" Width="444"/>
 
 
     </Grid>
