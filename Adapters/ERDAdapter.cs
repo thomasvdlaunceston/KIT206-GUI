@@ -180,6 +180,45 @@ namespace KIT206_GroupWork.Adapters
             }
             return positions;
         }
+        private static string retrieveResearchersName(int id)
+        {
+            MySqlDataReader rdr = null;
+            GetConnection();
+
+            try
+            {
+                // Open the connection
+                conn.Open();
+
+                // 1. Instantiate a new command with a query and connection
+                //MySqlCommand cmd = new MySqlCommand("select type,given_name,family_name,title,unit,campus,email,photo,degree,supervisor_id,level,utas_start,current_start from researcher where id = "+id, conn);
+                MySqlCommand cmd = new MySqlCommand("select given_name, family_name, title from researcher where id = " + id, conn);
+
+                // 2. Call Execute reader to get query results
+                rdr = cmd.ExecuteReader();
+
+                // print the CategoryName of each record
+                while (rdr.Read())
+                {
+                    return String.Format("{0}, {1} ({2})", rdr.GetString(0), rdr.GetString(1), rdr.GetString(2));
+                }
+            }
+            finally
+            {
+                // close the reader
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return "No Supervisor";
+        }
         public static Researcher.Researcher fetchFullResearcherDetails(int id)
         {
 
@@ -213,8 +252,13 @@ namespace KIT206_GroupWork.Adapters
                     if (rdr.GetString(1) == "Student")
                     {
                         var enumerated = rdr[11] != DBNull.Value ? rdr.GetString(3) : "Student";
-                        student = new Researcher.Student { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), Degree = rdr.GetString(9), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated) };
+                        int supervisor = rdr.GetInt32(10);
+                        
+                        student = new Researcher.Student { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), Degree = rdr.GetString(9) };
+                        //student = new Researcher.Student { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), Degree = rdr.GetString(9)};
                         Researcher.Position studentPos = new Researcher.Position { start = rdr.GetDateTime(12), level = Researcher.EmploymentLevel.Student };
+                        conn.Close();
+                        student.supervisor = retrieveResearchersName(supervisor);
                         student.positions = new List<Researcher.Position>();
                         student.positions.Add(studentPos);
                         return student;
@@ -222,7 +266,7 @@ namespace KIT206_GroupWork.Adapters
                     else
                     {
                         var enumerated = rdr[11] != DBNull.Value ? rdr.GetString(3) : "Student";
-                        staff = new Researcher.Staff { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8), level = (Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated) };
+                        staff = new Researcher.Staff { ID = id, GivenName = rdr.GetString(2), FamilyName = rdr.GetString(3), Title = rdr.GetString(4), School = rdr.GetString(5), Campus = rdr.GetString(6), Email = rdr.GetString(7), Photo = rdr.GetString(8)};
                         conn.Close();
                         positions = fetchPositions(id);
                         staff.positions = new List<Researcher.Position>(positions);
@@ -234,7 +278,6 @@ namespace KIT206_GroupWork.Adapters
                         staff.student = new List<Researcher.Student>(supervisions);
                         return staff;
                     }
-
                 }
             }
             finally

@@ -10,6 +10,9 @@ namespace KIT206_GroupWork.Researcher
 	{
 		private Dictionary<EmploymentLevel, double> expectedPub = new Dictionary<EmploymentLevel, double>();
 		public List<Student> student;
+		public int numSupervisions { get { return student.Count; } }
+		public float ThreeYearAverage {get; set;}
+		public float performance { get; set; }
 
 		public Staff()
 		{
@@ -23,26 +26,27 @@ namespace KIT206_GroupWork.Researcher
 			expectedPub[EmploymentLevel.E] = 4;
 		}
 
-		public float ThreeYearAverage()
+		public void calculateThreeYearAverage(Control.PublicationsController pcontrol)
 		{
 			int numberOfPublications = 0;
 			int CurrentYear = DateTime.Now.Year;
-			int totalPublications = publications.Count;
 
-			while ((CurrentYear - publications[totalPublications].Year) <= 3)
+
+			int totalPublications = pcontrol.publicationCount;
+
+			while ((CurrentYear - pcontrol.mainList[totalPublications-1].Year) <= 3)
 			{
 				numberOfPublications++;
 				totalPublications--;
 			}
-
-			return numberOfPublications / 3;
-
+			ThreeYearAverage = numberOfPublications / 3;
 		}
 
-		public float Performance()
+		public void Performance(Control.PublicationsController pcontrol)
 		{
 			double CurrentExpectedNumber = expectedPub[GetCurrentJob().level];
-			return (float)(ThreeYearAverage() / CurrentExpectedNumber);
+			calculateThreeYearAverage(pcontrol);
+			performance =  (float)(ThreeYearAverage / CurrentExpectedNumber);
 		}
 
 

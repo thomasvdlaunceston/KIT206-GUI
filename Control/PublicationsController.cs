@@ -12,6 +12,7 @@ namespace KIT206_GroupWork.Control
     {
         public List<Researcher.Publication> mainList;
         public ObservableCollection<Researcher.Publication> displayList;
+        public int publicationCount { get { return mainList.Count; } }
         Researcher.Publication publication;
 
         public void loadPublications(Researcher.Researcher r)
@@ -23,6 +24,11 @@ namespace KIT206_GroupWork.Control
         public void loadFullPublications(Researcher.Publication p)
         {
             publication = loadPublicationDetails(p);
+        }
+
+        public ObservableCollection<Researcher.Publication> getPublicationList()
+        {
+            return displayList;
         }
 
         public List<string> basicPublicationConsole()

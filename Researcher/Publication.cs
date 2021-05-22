@@ -26,5 +26,11 @@ namespace KIT206_GroupWork.Researcher
 			//Is this appropriate???
 			return DateTime.Now.Year - Year;
 		}
-	}
+
+        public override string ToString()
+        {
+			return string.Format("{0}, {1}", Year, Title);
+            //return base.ToString();
+        }
+    }
 }

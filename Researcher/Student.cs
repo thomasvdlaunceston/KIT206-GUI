@@ -9,6 +9,7 @@ namespace KIT206_GroupWork.Researcher
     class Student : Researcher
     {
         public string Degree { get; set; }
+        public string supervisor { get; set; }
         //string supervisior;
     }
 }
