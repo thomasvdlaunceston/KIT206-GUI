@@ -22,6 +22,7 @@ namespace KIT206_GroupWork.Researcher
 			convertTitle[EmploymentLevel.C] = "Senior Lecturer";
 			convertTitle[EmploymentLevel.D] = "Associate Professor";
 			convertTitle[EmploymentLevel.E] = "Professor";
+			convertTitle[EmploymentLevel.ALL] = "ALL";
 		}
 
 		public string title()

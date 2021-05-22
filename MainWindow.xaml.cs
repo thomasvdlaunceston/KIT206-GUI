@@ -152,6 +152,7 @@ namespace KIT206_GUI
             }
             else {
                 R_Controller.reset();
+                
             }
 
         }
@@ -165,7 +166,10 @@ namespace KIT206_GUI
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
+            
+            filterComboBox.SelectedIndex = 6;
             R_Controller.reset();
+
         }
     }
     } 

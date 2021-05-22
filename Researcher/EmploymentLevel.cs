@@ -13,6 +13,7 @@ namespace KIT206_GroupWork.Researcher
         B,
         C,
         D,
-        E
+        E,
+        ALL
     }
 }
