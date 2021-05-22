@@ -10,7 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Height="410" Margin="6,8,0,0" VerticalAlignment="Top" Width="431">
+        <StackPanel x:Name="PulicationDetailsPannel" HorizontalAlignment="Left" Height="410" Margin="6,8,0,0" VerticalAlignment="Top" Width="431">
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="DOI:"></Label>
