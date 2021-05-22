@@ -7,7 +7,53 @@
         mc:Ignorable="d"
         Title="PublicationDetails" Height="450" Width="450" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="420" Margin="0,0,0,0" VerticalAlignment="Top" Width="444"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="410" Margin="6,8,0,0" VerticalAlignment="Top" Width="431">
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="DOI:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Title:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Author:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Publication Year:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Type:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Cite as:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Availbility Date:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Age:"></Label>
+                <Label Content=""></Label>
+            </StackPanel>
+
+
+        </StackPanel>
 
 
     </Grid>

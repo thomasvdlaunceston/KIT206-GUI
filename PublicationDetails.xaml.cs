@@ -22,6 +22,9 @@ namespace KIT206_GUI
         public PublicationDetails()
         {
             InitializeComponent();
+
+
+
         }
     }
 }
