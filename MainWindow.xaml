@@ -36,6 +36,7 @@
             <Label Content="Show:" HorizontalAlignment="Left" Margin="196,31,0,0" VerticalAlignment="Top" Grid.Column="2"/>
             <ComboBox x:Name="filterComboBox" HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2"/>
             <Button x:Name="Reset" Content="Reset Filter" Grid.Column="2" HorizontalAlignment="Left" Margin="392,34,0,0" VerticalAlignment="Top" Width="74" Click="Reset_Click"/>
+            
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Row="1"/>
@@ -103,9 +104,10 @@
                 <Label Content="{Binding Path=supervisor}"></Label>
             </StackPanel>
         </StackPanel>
-        <TextBlock x:Name="LowerYear" HorizontalAlignment="Left" Margin="243,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="2.449,1.812"/>
-        <TextBlock x:Name="HigherYear" HorizontalAlignment="Left" Margin="166,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"/>
-
+        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="7,31,0,407" TextWrapping="Wrap" Text="Start Year" Width="56" Foreground="DarkBlue"/>
+        <TextBox x:Name="EndYear" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="204,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="152,31,0,406" TextWrapping="Wrap" Width="52" Foreground="DarkBlue"><Run Text="End Year"/></TextBlock>
+        <TextBox x:Name="StartYear" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="63,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
 
 
         <Menu x:Name="MainMenu"  Height="26" Margin="0,0,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
@@ -120,7 +122,7 @@
 
             </MenuItem>
         </Menu>
-        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,30,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1">
+        <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,60,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1">
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
@@ -131,6 +133,8 @@
             <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="FilterPublications" Content="Filter" Grid.Column="1" HorizontalAlignment="Left" Margin="297,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="FilterPublications_Click"/>
+        <Image x:Name="ResearcherPicture" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="263,8,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.53,0.35"/>
         <!--<Label Content="Label" HorizontalAlignment="Left" Margin="66,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="7,1.105" Grid.Column="1" Grid.RowSpan="2"/>-->
     </Grid>
 </Window>

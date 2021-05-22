@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,6 +48,14 @@ namespace KIT206_GUI
                     R_Controller.staff.calculateThreeYearAverage(P_Controller);
                     R_Controller.staff.Performance(P_Controller);
                     DetailsPanel.DataContext = R_Controller.staff;
+
+                    //https://stackoverflow.com/questions/18435829/showing-image-in-wpf-using-the-url-link-from-database
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(R_Controller.staff.Photo, UriKind.Absolute);
+                    bitmap.EndInit();
+
+                    ResearcherPicture.Source = bitmap;
                     //ResearcherList.ItemsSource = P_Controller.
                     //List_of_Publications.DataContext = P_Controller.displayList;
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
@@ -166,6 +175,28 @@ namespace KIT206_GUI
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             R_Controller.reset();
+        }
+
+        private void FilterPublications_Click(object sender, RoutedEventArgs e)
+        {
+            Regex num = new Regex("^[0-9]+$");
+            
+            if (StartYear.Text != null && EndYear.Text != null && StartYear.Text.Length == 4 && EndYear.Text.Length == 4 && num.IsMatch(StartYear.Text) && num.IsMatch(EndYear.Text) && P_Controller.displayList!=null)
+            {
+                int startYear = int.Parse(StartYear.Text);
+                int endYear = int.Parse(EndYear.Text);
+                P_Controller.filterByYear(startYear, endYear);
+            }
+            else if (StartYear.Text == "" && EndYear.Text == "" && P_Controller.displayList!= null)
+            {
+                P_Controller.reset();
+            }
+            else
+            {
+                MessageBox.Show("Please enter two years properly formatted years, after selecting a researcher");
+            }
+
+           
         }
     }
     } 

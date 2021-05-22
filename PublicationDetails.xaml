@@ -5,52 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="PublicationDetails" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="PublicationDetails" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="PublicationDetailsPane" HorizontalAlignment="Left" Height="410" Margin="6,8,0,0" VerticalAlignment="Top" Width="431">
+        <StackPanel x:Name="PublicationDetailsPane" Margin="6,8,0,0">
 
             <StackPanel Orientation="Vertical">
-                <Label Content="DOI:"></Label>
+                <Label Content="DOI:" Foreground="DarkBlue"></Label>
                 <Label Content="{Binding Path=DOI}"></Label>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Title:"></Label>
+                <Label Content="Title:" Foreground="DarkBlue"></Label>
                 <!--<Label Content="{Binding Path=Title}"></Label>-->
-        <TextBlock TextWrapping="Wrap" Text="{Binding Path=Title}"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Title}" Margin="5,0,0,0"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Author:"></Label>
-                <Label Content="{Binding Path=Authors}"></Label>
+                <Label Content="Author:" Foreground="DarkBlue"></Label>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Path=Authors}" Margin="5,0,0,0"></TextBlock>
             </StackPanel>
 
-            <StackPanel Orientation="Vertical">
-                <Label Content="Publication Year:"></Label>
+            <StackPanel Orientation="Vertical" >
+                <Label Content="Publication Year:" Foreground="DarkBlue"></Label>
                 <Label Content="{Binding Path=Year}"></Label>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Type:"></Label>
+                <Label Content="Type:" Foreground="DarkBlue"></Label>
                 <Label Content="{Binding Path=Type}"></Label>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Cite as:"></Label>
+                <Label Content="Cite as:" Foreground="DarkBlue"></Label>
                 <!--<Label Content="{Binding Path=CiteAs}"></Label>-->
-                <TextBlock TextWrapping="Wrap" Text="{Binding Path=CiteAs}"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Path=CiteAs}" Margin="5,0,0,0"></TextBlock>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Availbility Date:"></Label>
+                <Label Content="Availability Date:" Foreground="DarkBlue"></Label>
                 <Label Content="{Binding Path=Available}"></Label>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Age:"></Label>
+                <Label Content="Age:" Foreground="DarkBlue"></Label>
                 <Label Content="{Binding Path=currentAge}"></Label>
             </StackPanel>
 
