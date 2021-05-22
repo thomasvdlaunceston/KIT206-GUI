@@ -32,14 +32,9 @@
             <Label Content="Filter by name:" HorizontalAlignment="Left" Margin="-6,31,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
             <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="23" Margin="24,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" AutomationProperties.HelpText="Enter a name to filter the list" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="SearchBox_TextChanged"/>
             <Label Content="Show:" HorizontalAlignment="Left" Margin="196,31,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-            <ComboBox x:Name="filterComboBox" HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2">
-				<ComboBoxItem Content="student" HorizontalAlignment="Left" Width="118"/>
-				<ComboBoxItem Content="A" HorizontalAlignment="Left" Width="118"/>
-				<ComboBoxItem Content="B" HorizontalAlignment="Left" Width="118"/>
-				<ComboBoxItem Content="C" HorizontalAlignment="Left" Width="118"/>
-				<ComboBoxItem Content="D" HorizontalAlignment="Left" Width="118"/>
-				<ComboBoxItem Content="E" HorizontalAlignment="Left" Width="118"/>
-			</ComboBox>
+            <ComboBox x:Name="filterComboBox" HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2" IsEditable="True" Text="Please Select">
+          
+            </ComboBox>
 			<TextBlock HorizontalAlignment="Left" Margin="0,71,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,346,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
             <TextBlock HorizontalAlignment="Left" Margin="338,344,0,0" TextWrapping="Wrap" Text="LIST OF PUBLICATIONS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Column="2"/>

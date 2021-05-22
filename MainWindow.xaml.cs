@@ -25,10 +25,9 @@ namespace KIT206_GUI
         public MainWindow()
         {
             InitializeComponent();
-
-            
-           R_Controller.LoadReseachers();
-            ResearcherList.ItemsSource = R_Controller.GetViewableList();
+            filterComboBox.ItemsSource = Enum.GetValues(typeof(EmploymentLevel));
+            R_Controller.LoadReseachers();
+            ResearcherList.ItemsSource = R_Controller.GetViewableList();//gets list of researchers
 
             
         }
@@ -40,8 +39,57 @@ namespace KIT206_GUI
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //EmploymentLevel x=EmploymentLevel.A;
+
+            // EmploymentLevel.;
+
+            //switch(filterComboBox.SelectedItem){
+            //    case filterComboBox(EmploymentLevel.A): 
+            //        x = EmploymentLevel.A;
+            //        break;
+            //    case filterComboBox.SelectedItem.Equals(EmploymentLevel.B):
+            //        x = EmploymentLevel.B;
+            //        break;
+            //}
+
+            if (filterComboBox.SelectedItem.Equals(EmploymentLevel.A))
+            {
+                R_Controller.FilterBy(EmploymentLevel.A);
+                return;
+            }
+            else if(filterComboBox.SelectedItem.Equals(EmploymentLevel.B)){
+                R_Controller.FilterBy(EmploymentLevel.B);
+                return;
+
+            }
+            else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.C))
+            {
+                R_Controller.FilterBy(EmploymentLevel.C);
+                return;
+            }
+            else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.D))
+            {
+                R_Controller.FilterBy(EmploymentLevel.D);
+                return;
+            }
+            else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.E))
+            {
+                R_Controller.FilterBy(EmploymentLevel.E);
+                return;
+            }
+            else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.Student))
+            {
+                R_Controller.FilterBy(EmploymentLevel.Student);
+                return;
+
+            }
+            else
+            {
+                R_Controller.reset();
+            }
 
         }
+
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -53,13 +101,13 @@ namespace KIT206_GUI
                 R_Controller.reset();
             }
 
+        }
 
-           
+        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
             
-          
 
-            
-            
+
         }
     }
 }
