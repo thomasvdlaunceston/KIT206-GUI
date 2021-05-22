@@ -21,70 +21,105 @@ namespace KIT206_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        KIT206_GroupWork.Control.ResearcherController R_Controller;
-        KIT206_GroupWork.Control.PublicationsController P_Controller;
+        //KIT206_GroupWork.Control.ResearcherController R_Controller;
+        KIT206_GroupWork.Control.PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+        KIT206_GroupWork.Control.ResearcherController R_Controller = new KIT206_GroupWork.Control.ResearcherController();
+
         public MainWindow()
         {
             InitializeComponent();
 
             R_Controller = new KIT206_GroupWork.Control.ResearcherController();
             P_Controller = new KIT206_GroupWork.Control.PublicationsController();
-
             R_Controller.LoadReseachers();
-            ResearcherList.ItemsSource = R_Controller.GetViewableList();
+            ResearcherList.ItemsSource = R_Controller.GetViewableList();//gets list of researchers
+            
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-
-            R_Controller.LoadResearcherDetails(((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]).ID);
-            P_Controller.loadPublications((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]);
-            if (R_Controller.isStaff)
+            private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
-                P_Controller.loadPublications(R_Controller.staff);
-                R_Controller.staff.calculateThreeYearAverage(P_Controller);
-                R_Controller.staff.Performance(P_Controller);
-                DetailsPanel.DataContext = R_Controller.staff;
-                //ResearcherList.ItemsSource = P_Controller.
-                //List_of_Publications.DataContext = P_Controller.displayList;
-                ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+
+
+                R_Controller.LoadResearcherDetails(((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]).ID);
+                P_Controller.loadPublications((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]);
+                if (R_Controller.isStaff)
+                {
+                    P_Controller.loadPublications(R_Controller.staff);
+                    R_Controller.staff.calculateThreeYearAverage(P_Controller);
+                    R_Controller.staff.Performance(P_Controller);
+                    DetailsPanel.DataContext = R_Controller.staff;
+                    //ResearcherList.ItemsSource = P_Controller.
+                    //List_of_Publications.DataContext = P_Controller.displayList;
+                    ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+
+                }
+                else
+                {
+                    DetailsPanel.DataContext = R_Controller.student;
+                    P_Controller.loadPublications(R_Controller.student);
+                    ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+                }
+                PublicationCount.DataContext = P_Controller;
+
+
+                //MessageBox.Show("" + e.AddedItems[0]);
+            }
+        
+
+            private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+                if (filterComboBox.SelectedItem.Equals(EmploymentLevel.A))
+                {
+                    R_Controller.FilterBy(EmploymentLevel.A);
+                    return;
+                }
+                else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.B)) {
+                    R_Controller.FilterBy(EmploymentLevel.B);
+                    return;
+
+                }
+                else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.C))
+                {
+                    R_Controller.FilterBy(EmploymentLevel.C);
+                    return;
+                }
+                else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.D))
+                {
+                    R_Controller.FilterBy(EmploymentLevel.D);
+                    return;
+                }
+                else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.E))
+                {
+                    R_Controller.FilterBy(EmploymentLevel.E);
+                    return;
+                }
+                else if (filterComboBox.SelectedItem.Equals(EmploymentLevel.Student))
+                {
+                    R_Controller.FilterBy(EmploymentLevel.Student);
+                    return;
+
+                }
+                else
+                {
+                    R_Controller.reset();
+                }
 
             }
-            else
+
+            private void ListOfPublications_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
-                DetailsPanel.DataContext = R_Controller.student;
-                P_Controller.loadPublications(R_Controller.student);
-                ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+
             }
-            PublicationCount.DataContext = P_Controller;
-
-
-            //MessageBox.Show("" + e.AddedItems[0]);
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ListOfPublications_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void ListOfPublications_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var currentRowIndex = ListOfPublications.Items.IndexOf(ListOfPublications.SelectedItem);
 
-            PublicationDetails pdetails = new PublicationDetails();
+        private void List_of_Publications_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-            pdetails.ShowDialog();
-               
         }
-
-
-
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -96,15 +131,13 @@ namespace KIT206_GUI
                 R_Controller.reset();
             }
 
+            }
 
-           
-            
-          
+            private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+            {
 
             
             
         }
-
-       
     }
 }
