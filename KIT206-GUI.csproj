@@ -70,6 +70,9 @@
     <Compile Include="Researcher\Researcher.cs" />
     <Compile Include="Researcher\Staff.cs" />
     <Compile Include="Researcher\Student.cs" />
+    <Compile Include="Supervisions.xaml.cs">
+      <DependentUpon>Supervisions.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PublicationDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Supervisions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

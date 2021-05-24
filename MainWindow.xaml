@@ -36,7 +36,7 @@
             <Label Content="Show:" HorizontalAlignment="Left" Margin="196,31,0,0" VerticalAlignment="Top" Grid.Column="2"/>
             <ComboBox x:Name="filterComboBox" HorizontalAlignment="Left" Margin="246,35,0,0" VerticalAlignment="Top" Width="120" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" Grid.Column="2"/>
             <Button x:Name="Reset" Content="Reset Filter" Grid.Column="2" HorizontalAlignment="Left" Margin="392,34,0,0" VerticalAlignment="Top" Width="74" Click="Reset_Click"/>
-            
+
         </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="0,70,0,0" TextWrapping="Wrap" Text="LIST OF RESEARCHERS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="RESEARCHERS' DETAILS" VerticalAlignment="Top" Width="156" Foreground="DarkBlue" Grid.Row="1"/>
@@ -92,6 +92,7 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="Supervisions: "></Label>
                 <Label Content="{Binding Path=numSupervisions}"></Label>
+                <Button x:Name="ShowNames" Content="Show Names" Click="ShowNames_Click"/>
                 <Label Content="Performance: "></Label>
                 <Label Content="{Binding Path=performance}"></Label>
             </StackPanel>
@@ -129,12 +130,24 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-            <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
-            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Path=Year}" />
+                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="FilterPublications" Content="Filter" Grid.Column="1" HorizontalAlignment="Left" Margin="297,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="FilterPublications_Click"/>
         <Image x:Name="ResearcherPicture" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="263,8,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.53,0.35"/>
+        <!--<Image x:Name="ResearcherPicture" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="263,8,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.53,0.35"/> -->
+        <!--<Grid Height="461" Grid.Row="1" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="228"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="ResearcherPicture" Margin="0,0,0,4" RenderTransformOrigin="0.53,0.35" Grid.Column="1"/>
+        </Grid>-->
         <!--<Label Content="Label" HorizontalAlignment="Left" Margin="66,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="7,1.105" Grid.Column="1" Grid.RowSpan="2"/>-->
     </Grid>
 </Window>
