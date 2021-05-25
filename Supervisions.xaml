@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="Supervisions" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Supervisions" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Group-icon.png">
     <Grid>
         <ListBox x:Name="SupervisionNames" BorderThickness="0" IsHitTestVisible="False"></ListBox>
 

@@ -44,8 +44,13 @@
 
         <!--<ListBox x:Name="List_of_Publications" Grid.Column="1" Margin="10,30,8,8" Grid.Row="1" SelectionChanged="List_of_Publications_SelectionChanged"/>-->
         <!--<Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>-->
-
-
+        <Grid Height="228" Grid.Row="1" Width="396" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="ResearcherPicture" Grid.Column="1" Margin="0" RenderTransformOrigin="0.53,0.35" VerticalAlignment="Top" MaxHeight="228"/>
+        </Grid>
         <StackPanel x:Name="DetailsPanel" Orientation="Vertical" Margin="10,20,0,0" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Name:"></Label>
@@ -135,7 +140,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="FilterPublications" Content="Filter" Grid.Column="1" HorizontalAlignment="Left" Margin="297,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="FilterPublications_Click"/>
-        <Image x:Name="ResearcherPicture" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="263,8,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.53,0.35"/>
+
+        
         <!--<Image x:Name="ResearcherPicture" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="263,8,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.53,0.35"/> -->
         <!--<Grid Height="461" Grid.Row="1" VerticalAlignment="Top">
             <Grid.RowDefinitions>

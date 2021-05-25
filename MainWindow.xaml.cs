@@ -74,6 +74,13 @@ namespace KIT206_GUI
                 }
                 else
                 {
+                    //https://stackoverflow.com/questions/18435829/showing-image-in-wpf-using-the-url-link-from-database
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(R_Controller.student.Photo, UriKind.Absolute);
+                    bitmap.EndInit();
+
+                    ResearcherPicture.Source = bitmap;
                     DetailsPanel.DataContext = R_Controller.student;
                     P_Controller.loadPublications(R_Controller.student);
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
