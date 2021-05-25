@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace KIT206_GroupWork.Researcher
 {
-    class Student : Researcher
+    public class Student : Researcher
     {
         public string Degree { get; set; }
         public string supervisor { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", GivenName, FamilyName);
+        }
         //string supervisior;
     }
 }

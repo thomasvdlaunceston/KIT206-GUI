@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KIT206_GroupWork.Researcher
 {
-    class Researcher
+    public class Researcher
     {
         //researcher details
         public int ID { get; set; }

@@ -11,6 +11,7 @@ namespace KIT206_GroupWork.Control
     class ResearcherController
     {
         List<Researcher.Researcher> mainList;
+        ObservableCollection<Researcher.Student> supervisions = new ObservableCollection<Researcher.Student>();
         ObservableCollection<Researcher.Researcher> displayList;
         public Researcher.Student student;
         public Researcher.Staff staff;
@@ -85,6 +86,11 @@ namespace KIT206_GroupWork.Control
             return displayList;
         }
 
+        public ObservableCollection<Researcher.Student> GetViewableSupervisions()
+        {
+            return supervisions;
+        }
+
         public List<String> basicConsoleDisplay()
         {
             List<String> display = new List<string>();
@@ -107,6 +113,11 @@ namespace KIT206_GroupWork.Control
             else
             {
                 staff = (Researcher.Staff)Adapters.ERDAdapter.fetchFullResearcherDetails(id);
+                supervisions.Clear();
+                foreach (Researcher.Student stud in staff.student)
+                {
+                    supervisions.Add(stud);
+                }
                 isStaff = true;
             }
         }

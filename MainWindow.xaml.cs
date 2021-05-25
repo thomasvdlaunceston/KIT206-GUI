@@ -25,10 +25,13 @@ namespace KIT206_GUI
         //KIT206_GroupWork.Control.ResearcherController R_Controller;
         KIT206_GroupWork.Control.PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
         KIT206_GroupWork.Control.ResearcherController R_Controller = new KIT206_GroupWork.Control.ResearcherController();
+        //KIT206_GroupWork.Control.ResearcherController R_Controller = (KIT206_GroupWork.Control.ResearcherController)(Application.Current.FindResource("supervisions") as ObjectDataProvider).ObjectInstance;
+
 
         public MainWindow()
         {
             InitializeComponent();
+            ShowNames.Visibility = Visibility.Hidden;
             filterComboBox.ItemsSource = Enum.GetValues(typeof(EmploymentLevel));
             R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();//gets list of researchers
@@ -59,13 +62,29 @@ namespace KIT206_GUI
                     //ResearcherList.ItemsSource = P_Controller.
                     //List_of_Publications.DataContext = P_Controller.displayList;
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+                    if (R_Controller.staff.numSupervisions > 0)
+                    {
+                        ShowNames.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        ShowNames.Visibility = Visibility.Hidden;
+                    }
 
                 }
                 else
                 {
+                    //https://stackoverflow.com/questions/18435829/showing-image-in-wpf-using-the-url-link-from-database
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(R_Controller.student.Photo, UriKind.Absolute);
+                    bitmap.EndInit();
+
+                    ResearcherPicture.Source = bitmap;
                     DetailsPanel.DataContext = R_Controller.student;
                     P_Controller.loadPublications(R_Controller.student);
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
+                    ShowNames.Visibility = Visibility.Hidden;
                 }
                 PublicationCount.DataContext = P_Controller;
             }
@@ -74,6 +93,8 @@ namespace KIT206_GUI
                 DetailsPanel.DataContext = null;
                 ListOfPublications.ItemsSource = null;
                 PublicationCount.DataContext = null;
+                ResearcherPicture.Source = null;
+                ShowNames.Visibility = Visibility.Hidden;
             }
 
 
@@ -201,6 +222,12 @@ namespace KIT206_GUI
             }
 
            
+        }
+
+        private void ShowNames_Click(object sender, RoutedEventArgs e)
+        {
+            Supervisions supervisions = new Supervisions(R_Controller.GetViewableSupervisions());
+            supervisions.ShowDialog();
         }
     }
     } 

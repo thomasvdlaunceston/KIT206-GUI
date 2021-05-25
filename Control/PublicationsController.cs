@@ -12,6 +12,7 @@ namespace KIT206_GroupWork.Control
     {
         public List<Researcher.Publication> mainList;
         public ObservableCollection<Researcher.Publication> displayList;
+
         public int publicationCount { get { return mainList.Count; } }
         Researcher.Publication publication;
 
