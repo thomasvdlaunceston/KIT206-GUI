@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace KIT206_GroupWork.Researcher
 {
-	class Staff : Researcher
+	public class Staff : Researcher
 	{
 		private Dictionary<EmploymentLevel, double> expectedPub = new Dictionary<EmploymentLevel, double>();
 		public List<Student> student;
 		public int numSupervisions { get { return student.Count; } }
-		public float ThreeYearAverage {get; set;}
-		public float performance { get; set; }
+		public float ThreeYearAverage { get; set; }
+		public string performance { get; set; }
+		public float floatPerformance { get; set; }
 
 		public Staff()
 		{
@@ -44,12 +45,20 @@ namespace KIT206_GroupWork.Researcher
 
 		public void Performance(Control.PublicationsController pcontrol)
 		{
+			
 			double CurrentExpectedNumber = expectedPub[GetCurrentJob().level];
 			calculateThreeYearAverage(pcontrol);
-			performance =  (float)(ThreeYearAverage / CurrentExpectedNumber);
+			floatPerformance = ((float)(ThreeYearAverage / CurrentExpectedNumber) * 100);
+
+			performance =  Math.Round(floatPerformance,1).ToString("0.0");
 		}
 
+        public override string ToString()
+        {
+            return String.Format("{0}, {1}", performance, FullName);
+        }
 
 
-	}
+
+    }
 }

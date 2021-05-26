@@ -118,14 +118,15 @@
 
         <Menu x:Name="MainMenu"  Height="26" Margin="0,0,-0.4,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2">
             <MenuItem Header="_File">
-                <MenuItem Header="_Close" IsCheckable="true" />
+                <MenuItem Header="_Close" Click="MenuItem_Click" />
 
 
             </MenuItem>
             <MenuItem Header="_Report">
-                <MenuItem Header="_Generate Report" IsCheckable="true" />
-
-
+                <MenuItem Header="_Generate Poor Report" Click="MenuItem_Click_1" />
+                <MenuItem Header="_Generate Below Expectations Report" Click="MenuItem_Click_2" />
+                <MenuItem Header="_Generate Meeting Minimum" Click="MenuItem_Click_3" />
+                <MenuItem Header="_Generate Star Performers" Click="MenuItem_Click_4" />
             </MenuItem>
         </Menu>
         <DataGrid x:Name="ListOfPublications"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,60,0,21" HorizontalAlignment="Stretch" HeadersVisibility="Column" Grid.Row="1" Grid.Column="1">

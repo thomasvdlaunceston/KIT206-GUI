@@ -63,6 +63,9 @@
     <Compile Include="PublicationDetails.xaml.cs">
       <DependentUpon>PublicationDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Researcher\EmploymentLevel.cs" />
     <Compile Include="Researcher\OutputType.cs" />
     <Compile Include="Researcher\Position.cs" />
@@ -89,6 +92,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PublicationDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

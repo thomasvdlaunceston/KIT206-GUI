@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace KIT206_GroupWork.Control
 {
-    class PublicationsController
+    public class PublicationsController
     {
         public List<Researcher.Publication> mainList;
         public ObservableCollection<Researcher.Publication> displayList;

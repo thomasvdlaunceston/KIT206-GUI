@@ -189,8 +189,6 @@ namespace KIT206_GUI
         private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
         {
 
-
-
         }
 
         private void Reset_Click(object sender, RoutedEventArgs e)
@@ -224,6 +222,43 @@ namespace KIT206_GUI
         {
             Supervisions supervisions = new Supervisions(R_Controller.GetViewableSupervisions());
             supervisions.ShowDialog();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            R_Controller.generatePerformance(1);
+            Report report = new Report(R_Controller.GetViewablePerformance());
+            report.ShowDialog();
+            //Supervisions supervisions = new Supervisions(R_Controller.GetViewableSupervisions());
+            //supervisions.ShowDialog();
+
+
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            R_Controller.generatePerformance(2);
+            Report report = new Report(R_Controller.GetViewablePerformance());
+            report.ShowDialog();
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            R_Controller.generatePerformance(3);
+            Report report = new Report(R_Controller.GetViewablePerformance());
+            report.ShowDialog();
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            R_Controller.generatePerformance(4);
+            Report report = new Report(R_Controller.GetViewablePerformance());
+            report.ShowDialog();
         }
     }
     } 
