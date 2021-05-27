@@ -260,6 +260,12 @@ namespace KIT206_GUI
             Report report = new Report(R_Controller.GetViewablePerformance());
             report.ShowDialog();
         }
+
+        private void ShowCummulative_Click(object sender, RoutedEventArgs e)
+        {
+            CumulativeCount cumlativeCount = new CumulativeCount();
+            cumlativeCount.ShowDialog();
+        }
     }
     } 
 

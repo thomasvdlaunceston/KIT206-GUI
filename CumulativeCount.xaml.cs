@@ -11,29 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using KIT206_GroupWork.Researcher;
-
-
 
 namespace KIT206_GUI
 {
     /// <summary>
-    /// Interaction logic for PublicationDetails.xaml
+    /// Interaction logic for CumulativeCount.xaml
     /// </summary>
-    public partial class PublicationDetails : Window
+    public partial class CumulativeCount : Window
     {
-
-        KIT206_GroupWork.Control.PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
-
-        public PublicationDetails(KIT206_GroupWork.Researcher.Publication pub)
+        public CumulativeCount()
         {
             InitializeComponent();
-
-            
-            PublicationDetailsPane.DataContext = pub;
-
-           
-
         }
     }
 }

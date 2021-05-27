@@ -395,7 +395,9 @@ namespace KIT206_GroupWork.Adapters
         public static List<int[]> cumulativeCounts(Researcher.Researcher researcher)
         {
             int id = researcher.ID;
+
             int currentyear = 0;
+
             List<int[]> cumulativeCount = new List<int[]>();
             MySqlDataReader rdr = null;
             List<Researcher.Researcher> researcherList = new List<Researcher.Researcher>();

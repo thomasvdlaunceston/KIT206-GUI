@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
         MinHeight="700" MinWidth="750"
-        Title="RAP" Height="800" Width="800" Icon="Group-icon.png">
+        Title="RAP" Height="800" Width="800" Icon="Group-icon.png" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -46,16 +46,18 @@
         <!--<Label Content="Name:" HorizontalAlignment="Left" Margin="2,374,0,0" VerticalAlignment="Top"/>-->
         <Grid Height="228" Grid.Row="1" Width="396" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="ResearcherPicture" Grid.Column="1" Margin="0" RenderTransformOrigin="0.53,0.35" VerticalAlignment="Top" MaxHeight="228"/>
+            <Image x:Name="ResearcherPicture" Grid.Column="1" Margin="0" RenderTransformOrigin="0.53,0.35" HorizontalAlignment="Right" Width="150" Height="150"/>
         </Grid>
         <StackPanel x:Name="DetailsPanel" Orientation="Vertical" Margin="10,20,0,0" Grid.Row="1">
+            
             <StackPanel Orientation="Horizontal">
                 <Label Content="Name:"></Label>
                 <Label Content="{Binding Path=FullName}"></Label>
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal">
                 <Label Content="Title:"></Label>
                 <Label Content="{Binding Path=Title}"></Label>
@@ -105,10 +107,15 @@
                 <Label Content="Degree: "></Label>
                 <Label Content="{Binding Path=Degree}"></Label>
             </StackPanel>
+
             <StackPanel Orientation="Horizontal">
-                <Label Content="Supervisor: "></Label>
-                <Label Content="{Binding Path=supervisor}"></Label>
+                <Label Content="Cummulative: "></Label>
+                <Label Content="{Binding Path=numSupervisions}"></Label>
+                <Button x:Name="ShowCummulative" Content="Show" Click="ShowCummulative_Click"/>
+                
             </StackPanel>
+
+
         </StackPanel>
         <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="7,31,0,407" TextWrapping="Wrap" Text="Start Year" Width="56" Foreground="DarkBlue"/>
         <TextBox x:Name="EndYear" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="204,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>

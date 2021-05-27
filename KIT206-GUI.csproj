@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CumulativeCount.xaml.cs">
+      <DependentUpon>CumulativeCount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="PublicationDetails.xaml.cs">
       <DependentUpon>PublicationDetails.xaml</DependentUpon>
@@ -76,6 +79,10 @@
     <Compile Include="Supervisions.xaml.cs">
       <DependentUpon>Supervisions.xaml</DependentUpon>
     </Compile>
+    <Page Include="CumulativeCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
