@@ -13,6 +13,8 @@ namespace KIT206_GroupWork.Control
         List<Researcher.Researcher> mainList;
         ObservableCollection<Researcher.Student> supervisions = new ObservableCollection<Researcher.Student>();
         ObservableCollection<Researcher.Researcher> displayList;
+        ObservableCollection<Researcher.Staff> mainPerformances = new ObservableCollection<Researcher.Staff>();
+        ObservableCollection<Researcher.Staff> performances = new ObservableCollection<Researcher.Staff>();
         public Researcher.Student student;
         public Researcher.Staff staff;
         /*List<Researcher.Publication> mainPubList;
@@ -89,6 +91,11 @@ namespace KIT206_GroupWork.Control
         public ObservableCollection<Researcher.Student> GetViewableSupervisions()
         {
             return supervisions;
+        }
+
+        public ObservableCollection<Researcher.Staff> GetViewablePerformance()
+        {
+            return performances;
         }
 
         public List<String> basicConsoleDisplay()
@@ -177,6 +184,87 @@ namespace KIT206_GroupWork.Control
             return display;
         }
 
+
+        public void generatePerformance(int performanceReport)
+        {
+            PublicationsController P_Controller = new KIT206_GroupWork.Control.PublicationsController();
+            int temp = performanceReport;
+
+            //string[] staffMember;
+            //float[,] converter = { { 0, 70 }, {70,110}, { 110, -1}, {200,-1} };
+            foreach (Researcher.Researcher res in mainList)
+            {
+                LoadResearcherDetails(res.ID);
+                if (isStaff)
+                {
+                    //P_Controller.loadPublications(R_Controller.staff);
+                    P_Controller.loadPublications(staff);
+                    staff.calculateThreeYearAverage(P_Controller);
+                    staff.Performance(P_Controller);
+                    switch (performanceReport)
+                    {
+                        case 1:
+                            if (staff.floatPerformance <= 70)
+                            {
+                                mainPerformances.Add(staff);
+                            }
+                            break;
+                        case 2:
+                            if (staff.floatPerformance > 70 && staff.floatPerformance <110)
+                            {
+                                mainPerformances.Add(staff);
+                            }
+                            break;
+                        case 3:
+                            if (staff.floatPerformance >= 110)
+                            {
+                                mainPerformances.Add(staff);
+                            }
+                            break;
+                        case 4:
+                            if (staff.floatPerformance >= 200)
+                            {
+                                mainPerformances.Add(staff);
+                            }
+                        break;
+                    }
+                }
+            }
+
+
+            //Switch is causing this not to work
+            switch (performanceReport)
+            {
+                case 1:
+                    var sorted1 = from Researcher.Staff stf in mainPerformances
+                                  orderby stf.floatPerformance descending
+                                 select stf;
+                    performances.Clear();
+                    sorted1.ToList().ForEach(performances.Add);
+                    break;
+                case 2:
+                    var sorted2 = from Researcher.Staff stf in mainPerformances
+                                  orderby stf.floatPerformance descending
+                                 select stf;
+                    performances.Clear();
+                    sorted2.ToList().ForEach(performances.Add);
+                    break;
+                case 3:
+                    var sorted3 = from Researcher.Staff stf in mainPerformances
+                                  orderby stf.floatPerformance ascending
+                                  select stf;
+                    performances.Clear();
+                    sorted3.ToList().ForEach(performances.Add);
+                    break;
+                case 4:
+                    var sorted4 = from Researcher.Staff stf in mainPerformances
+                                  orderby stf.floatPerformance ascending
+                                  select stf;
+                    performances.Clear();
+                    sorted4.ToList().ForEach(performances.Add);
+                    break;
+            }
+        }
 
         /*public void loadPublications()
         {
