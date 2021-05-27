@@ -69,6 +69,7 @@
     <Compile Include="Report.xaml.cs">
       <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Researcher\CumulativeCount.cs" />
     <Compile Include="Researcher\EmploymentLevel.cs" />
     <Compile Include="Researcher\OutputType.cs" />
     <Compile Include="Researcher\Position.cs" />

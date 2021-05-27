@@ -15,6 +15,10 @@ namespace KIT206_GroupWork.Control
         ObservableCollection<Researcher.Researcher> displayList;
         ObservableCollection<Researcher.Staff> mainPerformances = new ObservableCollection<Researcher.Staff>();
         ObservableCollection<Researcher.Staff> performances = new ObservableCollection<Researcher.Staff>();
+        ObservableCollection<Researcher.CumulativeCount> CumulativeList = new ObservableCollection<Researcher.CumulativeCount>();
+
+
+
         public Researcher.Student student;
         public Researcher.Staff staff;
         /*List<Researcher.Publication> mainPubList;
@@ -26,6 +30,8 @@ namespace KIT206_GroupWork.Control
         public ResearcherController()
         {
         }
+
+        
 
         public void LoadReseachers()
         {
@@ -97,6 +103,15 @@ namespace KIT206_GroupWork.Control
         {
             return performances;
         }
+
+        public ObservableCollection<Researcher.CumulativeCount> GetViewableCumulativeCount()
+        {
+            foreach (int[] year in Adapters.ERDAdapter.cumulativeCounts((Researcher.Researcher)staff))
+            {
+                
+            }
+        }
+
 
         public List<String> basicConsoleDisplay()
         {

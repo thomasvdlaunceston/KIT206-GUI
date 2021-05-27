@@ -263,6 +263,7 @@ namespace KIT206_GUI
 
         private void ShowCummulative_Click(object sender, RoutedEventArgs e)
         {
+            
             CumulativeCount cumlativeCount = new CumulativeCount();
             cumlativeCount.ShowDialog();
         }
