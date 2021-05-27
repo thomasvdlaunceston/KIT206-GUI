@@ -158,8 +158,8 @@ namespace KIT206_GroupWork.Adapters
                     //https://stackoverflow.com/questions/20547261/database-field-enum-to-c-sharp-list
                     var enumerated = rdr[1] != DBNull.Value ? rdr.GetString(1) : "Student";
                     //NEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED TO FIX THIS
-                    DateTime start = rdr[2] != DBNull.Value ? rdr.GetDateTime(2) : DateTime.Now;
-                    DateTime end = rdr[3] != DBNull.Value ? rdr.GetDateTime(3) : start;
+                    DateTime start = rdr[2] != DBNull.Value ? rdr.GetDateTime(2) : DateTime.Today;
+                    DateTime end = rdr[3] != DBNull.Value ? rdr.GetDateTime(3) : DateTime.Today;
                     Researcher.Position pos = new Researcher.Position { start = start, end = end, level = ((Researcher.EmploymentLevel)Enum.Parse(typeof(Researcher.EmploymentLevel), enumerated)) };
                     positions.Add(pos);
                 }

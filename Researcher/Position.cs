@@ -47,7 +47,12 @@ namespace KIT206_GroupWork.Researcher
 
         public override string ToString()
         {
-			return String.Format("Position: {0}  {1}-{2}", title(), start.ToShortDateString(), end.ToShortDateString());
+			string endingDate = end.ToShortDateString();
+			if (end == DateTime.Today)
+			{
+				endingDate = "present";
+			}
+			return String.Format("Position: {0}  {1}-{2}", title(), start.ToShortDateString(), endingDate);
         }
 
     }

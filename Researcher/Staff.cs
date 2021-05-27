@@ -35,12 +35,12 @@ namespace KIT206_GroupWork.Researcher
 
 			int totalPublications = pcontrol.publicationCount;
 
-			while ((CurrentYear - pcontrol.mainList[totalPublications-1].Year) <= 3)
-			{
-				numberOfPublications++;
-				totalPublications--;
-			}
-			ThreeYearAverage = numberOfPublications / 3;
+			var sorted = from Publication publication in pcontrol.mainList
+						 where publication.Year >= (CurrentYear - 3)
+						 select publication;
+			numberOfPublications = sorted.Count();
+
+			ThreeYearAverage = numberOfPublications / (float)3;
 		}
 
 		public void Performance(Control.PublicationsController pcontrol)
@@ -55,6 +55,7 @@ namespace KIT206_GroupWork.Researcher
 
         public override string ToString()
         {
+
             return String.Format("{0}, {1}", performance, FullName);
         }
 
