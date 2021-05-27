@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="CumulativeCount"  Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Group-icon.png">
+        Title="CumulativeCount"  Height="400" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Group-icon.png">
     <Grid x:Name="CumulativeCount1">
         <DataGrid Name="CumulativeCountDGrid" Margin="0" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column">
             <DataGrid.Columns >
