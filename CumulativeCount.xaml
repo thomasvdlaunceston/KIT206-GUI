@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT206_GUI"
         mc:Ignorable="d"
-        Title="CumulativeCount"  Height="600" Width="450" WindowStartupLocation="CenterScreen">
-    <Grid>
-        
+        Title="CumulativeCount"  Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Group-icon.png">
+    <Grid x:Name="CumulativeCount1">
+        <DataGrid Name="CumulativeCountDGrid" Margin="0" IsReadOnly="True" AutoGenerateColumns="False" HeadersVisibility="Column">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Year" Binding="{Binding Path=year}" />
+                <DataGridTextColumn Header="Publications" Binding="{Binding Path=numPublications}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

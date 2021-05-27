@@ -110,7 +110,6 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Cummulative: "></Label>
-                <Label Content="{Binding Path=numSupervisions}"></Label>
                 <Button x:Name="ShowCummulative" Content="Show" Click="ShowCummulative_Click"/>
                 
             </StackPanel>

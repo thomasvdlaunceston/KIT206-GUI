@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+
 
 namespace KIT206_GUI
 {
@@ -19,9 +21,10 @@ namespace KIT206_GUI
     /// </summary>
     public partial class CumulativeCount : Window
     {
-        public CumulativeCount()
+        public CumulativeCount(ObservableCollection<KIT206_GroupWork.Researcher.CumulativeCount> count)
         {
             InitializeComponent();
+            CumulativeCountDGrid.ItemsSource = count;
         }
     }
 }

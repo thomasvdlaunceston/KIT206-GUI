@@ -106,10 +106,12 @@ namespace KIT206_GroupWork.Control
 
         public ObservableCollection<Researcher.CumulativeCount> GetViewableCumulativeCount()
         {
+            CumulativeList.Clear();
             foreach (int[] year in Adapters.ERDAdapter.cumulativeCounts((Researcher.Researcher)staff))
             {
-                
+                CumulativeList.Add(new Researcher.CumulativeCount(year[0], year[1]));
             }
+            return CumulativeList;
         }
 
 
