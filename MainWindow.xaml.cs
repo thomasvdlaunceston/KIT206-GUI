@@ -199,6 +199,7 @@ namespace KIT206_GUI
             
             filterComboBox.SelectedIndex = 6;
             R_Controller.reset();
+            SearchBox.Text = "";
 
         }
 
