@@ -49,8 +49,10 @@ namespace KIT206_GroupWork.Control
         {
             //Only Filters BY FIRST NAME
             var filtered = from Researcher.Researcher res in mainList
-                           where res.GivenName.ToLower().Contains(name.ToLower())
+                           where res.FamilyName.ToLower().Contains(name.ToLower()) || res.GivenName.ToLower().Contains(name.ToLower())
+                           
                            select res;
+
             displayList.Clear();
             filtered.ToList().ForEach(displayList.Add);
         }
