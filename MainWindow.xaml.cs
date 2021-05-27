@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace KIT206_GUI
 {
@@ -32,10 +33,10 @@ namespace KIT206_GUI
         {
             InitializeComponent();
             ShowNames.Visibility = Visibility.Hidden;
+            ShowCummulative.Visibility = Visibility.Hidden;
             filterComboBox.ItemsSource = Enum.GetValues(typeof(EmploymentLevel));
             R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();//gets list of researchers
-            
         }
 
             private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -70,7 +71,7 @@ namespace KIT206_GUI
                     {
                         ShowNames.Visibility = Visibility.Hidden;
                     }
-
+                    ShowCummulative.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -85,6 +86,7 @@ namespace KIT206_GUI
                     P_Controller.loadPublications(R_Controller.student);
                     ListOfPublications.ItemsSource = P_Controller.getPublicationList();
                     ShowNames.Visibility = Visibility.Hidden;
+                    ShowCummulative.Visibility = Visibility.Hidden;
                 }
                 PublicationCount.DataContext = P_Controller;
             }
@@ -95,6 +97,7 @@ namespace KIT206_GUI
                 PublicationCount.DataContext = null;
                 ResearcherPicture.Source = null;
                 ShowNames.Visibility = Visibility.Hidden;
+                ShowCummulative.Visibility = Visibility.Hidden;
             }
 
 
@@ -264,6 +267,13 @@ namespace KIT206_GUI
             R_Controller.generatePerformance(4);
             Report report = new Report(R_Controller.GetViewablePerformance());
             report.ShowDialog();
+        }
+
+        private void ShowCummulative_Click(object sender, RoutedEventArgs e)
+        {
+            ObservableCollection<KIT206_GroupWork.Researcher.CumulativeCount> count = R_Controller.GetViewableCumulativeCount();
+            CumulativeCount cumlativeCount = new CumulativeCount(R_Controller.GetViewableCumulativeCount());
+            cumlativeCount.ShowDialog();
         }
     }
     } 
