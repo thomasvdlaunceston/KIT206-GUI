@@ -211,6 +211,7 @@ namespace KIT206_GroupWork.Control
 
             //string[] staffMember;
             //float[,] converter = { { 0, 70 }, {70,110}, { 110, -1}, {200,-1} };
+            mainPerformances.Clear();
             foreach (Researcher.Researcher res in mainList)
             {
                 LoadResearcherDetails(res.ID);
@@ -229,7 +230,7 @@ namespace KIT206_GroupWork.Control
                             }
                             break;
                         case 2:
-                            if (staff.floatPerformance > 70 && staff.floatPerformance <110)
+                            if (staff.floatPerformance > 70 && staff.floatPerformance < 110)
                             {
                                 mainPerformances.Add(staff);
                             }
@@ -256,28 +257,28 @@ namespace KIT206_GroupWork.Control
             {
                 case 1:
                     var sorted1 = from Researcher.Staff stf in mainPerformances
-                                  orderby stf.floatPerformance descending
+                                  orderby stf.floatPerformance ascending
                                  select stf;
                     performances.Clear();
                     sorted1.ToList().ForEach(performances.Add);
                     break;
                 case 2:
                     var sorted2 = from Researcher.Staff stf in mainPerformances
-                                  orderby stf.floatPerformance descending
-                                 select stf;
+                                  orderby stf.floatPerformance ascending
+                                  select stf;
                     performances.Clear();
                     sorted2.ToList().ForEach(performances.Add);
                     break;
                 case 3:
                     var sorted3 = from Researcher.Staff stf in mainPerformances
-                                  orderby stf.floatPerformance ascending
+                                  orderby stf.floatPerformance descending
                                   select stf;
                     performances.Clear();
                     sorted3.ToList().ForEach(performances.Add);
                     break;
                 case 4:
                     var sorted4 = from Researcher.Staff stf in mainPerformances
-                                  orderby stf.floatPerformance ascending
+                                  orderby stf.floatPerformance descending
                                   select stf;
                     performances.Clear();
                     sorted4.ToList().ForEach(performances.Add);

@@ -41,9 +41,9 @@ namespace KIT206_GUI
 
             private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
             {
-
             if (e.AddedItems.Count != 0)
             {
+                PublicationCount.DataContext = null;
                 R_Controller.LoadResearcherDetails(((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]).ID);
                 P_Controller.loadPublications((KIT206_GroupWork.Researcher.Researcher)e.AddedItems[0]);
                 if (R_Controller.isStaff)

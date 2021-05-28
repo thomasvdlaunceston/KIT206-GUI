@@ -52,12 +52,11 @@
             <Image x:Name="ResearcherPicture" Grid.Column="1" Margin="0" RenderTransformOrigin="0.53,0.35" HorizontalAlignment="Right" Width="150" Height="150"/>
         </Grid>
         <StackPanel x:Name="DetailsPanel" Orientation="Vertical" Margin="10,20,0,0" Grid.Row="1">
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Name:"></Label>
                 <Label Content="{Binding Path=FullName}"></Label>
             </StackPanel>
-            
             <StackPanel Orientation="Horizontal">
                 <Label Content="Title:"></Label>
                 <Label Content="{Binding Path=Title}"></Label>
