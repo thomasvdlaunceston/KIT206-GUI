@@ -221,7 +221,7 @@ namespace KIT206_GUI
             }
             else
             {
-                MessageBox.Show("Please enter two years properly formatted years, after selecting a researcher");
+                MessageBox.Show("Please enter two properly formatted years, after selecting a researcher");
             }
 
            
