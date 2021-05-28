@@ -108,7 +108,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Cummulative: "></Label>
+                <Label Content="Cumulative: "></Label>
                 <Button x:Name="ShowCummulative" Content="Show" Click="ShowCummulative_Click"/>
                 
             </StackPanel>
