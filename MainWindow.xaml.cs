@@ -37,6 +37,7 @@ namespace KIT206_GUI
             filterComboBox.ItemsSource = Enum.GetValues(typeof(EmploymentLevel));
             R_Controller.LoadReseachers();
             ResearcherList.ItemsSource = R_Controller.GetViewableList();//gets list of researchers
+            filterComboBox.SelectedIndex = 6;
         }
 
             private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
