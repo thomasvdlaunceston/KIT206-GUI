@@ -312,7 +312,7 @@ namespace KIT206_GroupWork.Adapters
                 conn.Open();
 
                 // 1. Instantiate a new command with a query and connection
-                MySqlCommand cmd = new MySqlCommand("select publication.title, publication.year, publication.DOI from researcher_publication join publication on researcher_publication.doi = publication.doi where researcher_publication.researcher_id = " + researcherID + " order by year DESC;", conn);
+                MySqlCommand cmd = new MySqlCommand("select publication.title, publication.year, publication.DOI from researcher_publication join publication on researcher_publication.doi = publication.doi where researcher_publication.researcher_id = " + researcherID + " order by year DESC, title;", conn);
 
                 // 2. Call Execute reader to get query results
                 rdr = cmd.ExecuteReader();
